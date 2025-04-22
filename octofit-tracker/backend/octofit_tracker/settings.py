@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-n2-0!(&6#=p(b41r_dw2!u@3q&5)_f1sw5cc(b)+%rn)trx^$6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'probable-pancake-5gjp477j9qcqp6-8000.app.github.dev']
 
 
 # Application definition
@@ -144,3 +144,11 @@ CORS_ALLOW_HEADERS = [
     "authorization",
     "x-csrftoken",
 ]
+
+# Add the following to handle HTTPS and CORS for Codespace URL
+CSRF_TRUSTED_ORIGINS = ['https://probable-pancake-5gjp477j9qcqp6-8000.app.github.dev']
+
+# Add the following to disable HTTPS certificate validation for development purposes
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
